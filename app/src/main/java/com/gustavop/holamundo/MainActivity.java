@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.gustavop.holamundo.model.Alumno;
 
@@ -44,8 +46,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-//        Cuando presione el boton "Enviar" nos de un msj toast
-        
+
+
+    }
+
+    //Cuando presione el boton "Enviar" nos de un msj toast
+    public void enviarDatos(View view){
+        EditText edtNombre = (EditText) findViewById(R.id.nombre);
+        //extraemos el nombre que contiene edtNombre
+        String nombre = edtNombre.getText().toString();
+
+        Toast.makeText(getBaseContext(), "Felicidades tu nombre es: " + nombre, Toast.LENGTH_LONG).show();
     }
 
     @Override
